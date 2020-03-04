@@ -5,4 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-product = Product.new({name: })
+fake_name = Faker::Book.title
+fake_description = Faker::Book.genre + ", " + Faker::Book.author
+
+product = Product.new({name: fake_name, price: 2, image_url: "text", description: fake_description})
+product.save
+
+fake_name = Faker::Book.title
+fake_description = Faker::Book.genre + ", " + Faker::Book.author
+
+product = Product.new({name: fake_name, price: 2, image_url: "text", description: fake_description})
+product.save

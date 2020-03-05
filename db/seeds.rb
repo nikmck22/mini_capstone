@@ -8,11 +8,11 @@
 fake_name = Faker::Book.title
 fake_description = Faker::Book.genre + ", " + Faker::Book.author
 
-product = Product.new({name: fake_name, price: 2, image_url: "text", description: fake_description})
-product.save
+product = Product.create({name: fake_name, price: 2, image_url: "text", description: fake_description})
+
 
 fake_name = Faker::Book.title
 fake_description = Faker::Book.genre + ", " + Faker::Book.author
 
-product = Product.new({name: fake_name, price: 2, image_url: "text", description: fake_description})
-product.save
+product = Product.create({name: fake_name, price: 2, image_url: "text", description: fake_description})
+              

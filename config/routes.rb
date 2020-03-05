@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   namespace :api do
     get "/products" => "products#items"
     get "/query_param" => "products#query"
+    post "/body_param" => "products#user_name"
   end
 end

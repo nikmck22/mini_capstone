@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
   namespace :api do
-    get "/products" => "products#items"
-    get "/query_param" => "products#query"
-    post "/body_param" => "products#user_name"
+    get "/products" => "products#index"
   end
 end

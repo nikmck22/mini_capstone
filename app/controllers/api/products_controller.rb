@@ -21,4 +21,10 @@ class Api::ProductsController < ApplicationController
     @product.save
     render "show.json.jb"
   end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.save
+    render "destroy.json.jb"
+  end
 end

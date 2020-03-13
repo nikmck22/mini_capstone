@@ -1,14 +1,16 @@
 class Api::ProductsController < ApplicationController
   
   def index
-      if params[:search]
-        search_name = params[:search]
-        @products = Product.where("name LIKE ?", "#{search_name}")
+      if params[:discount] == "true"
+         @products = Product.where("price < 10")
       else
-        @products = Product.all
+        @products = Product.all.order(:price)
       end
     render "index.json.jb"
   end
+
+  # SELECT "products".* FROM "products" ORDER BY "products"."price" ASC
+  # SELECT "products".* FROM "products" WHERE (price < 3) LIMIT $1  [["LIMIT", 11]]
 
   def show
     the_id = params[:id]

@@ -1,11 +1,13 @@
 class Api::ProductsController < ApplicationController
   
   def index
-      if params[:discount] == "true"
-         @products = Product.where("price < 10")
-      else
-        @products = Product.all.order(:price)
-      end
+      # if params[:discount] == "true"
+      #    @products = Product.where("price < 10")
+      # else
+      #   @products = Product.all.order(:price)
+      # end
+    @products = Product.all
+    
     render "index.json.jb"
   end
 

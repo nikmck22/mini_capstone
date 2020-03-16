@@ -7,7 +7,7 @@ class Api::ProductsController < ApplicationController
       #   @products = Product.all.order(:price)
       # end
     @products = Product.all
-    
+    # @products = Supplier.where(supplier_id: id)
     render "index.json.jb"
   end
 
@@ -40,6 +40,7 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:input_price] || @product.price
     @product.image_url = params[:input_image_url] || @product.image_url
     @product.description = params[:input_description] || @product.description
+    @product.
    
    if @product.save
     render "show.json.jb"

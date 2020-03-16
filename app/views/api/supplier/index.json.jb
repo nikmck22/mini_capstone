@@ -1,8 +1,8 @@
 @supplier.map do |supplier|
   {
-    id: supplier.id
-    # name: supplier.name
-    # email: supplier.email
-    # phone: supplier.phone_number
+    id: supplier.id,
+    name: supplier.name,
+    email: supplier.email,
+    phone: supplier.phone_number
   }
 end

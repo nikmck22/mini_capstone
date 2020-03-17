@@ -6,6 +6,7 @@ class Api::ProductsController < ApplicationController
       # else
       #   @products = Product.all.order(:price)
       # end
+      # p current_user
     @products = Product.all
     # @products = Supplier.where(supplier_id: id)
     render "index.json.jb"
@@ -26,15 +27,12 @@ class Api::ProductsController < ApplicationController
       price: params[:input_price],
       image_url: params[:input_image_url],
       description: params[:input_description],
-      image_1: params[:image_1],
-      image_2: params[:image_2],
-      image_3: params[:image_3]
     )
-    @product.save
+    if @product.save
       render "show.json.jb"
-    # else
-    #   render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
-    # end
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -43,7 +41,6 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:input_price] || @product.price
     @product.image_url = params[:input_image_url] || @product.image_url
     @product.description = params[:input_description] || @product.description
-    @product.
    
    if @product.save
     render "show.json.jb"

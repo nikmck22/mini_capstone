@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
-  belongs_to :user
-  has_many :users
-  
+  belongs_to :supplier
+  has_many :images
+  has_many :orders
+
   validates :name, presence: true
   validates :name, length: { maximum: 40 }
   validates :price, presence: true

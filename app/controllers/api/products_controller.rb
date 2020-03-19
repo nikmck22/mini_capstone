@@ -27,6 +27,7 @@ class Api::ProductsController < ApplicationController
       price: params[:input_price],
       image_url: params[:input_image_url],
       description: params[:input_description],
+      # user_id: current_user.user_id
     )
     if @product.save
       render "show.json.jb"

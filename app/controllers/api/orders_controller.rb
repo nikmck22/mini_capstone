@@ -1,4 +1,13 @@
 class Api::OrdersController < ApplicationController
+  def index
+    if current_user
+      @orders = current_user.orders
+      render "index.json.jb"
+    else
+      render json: {}, status: :unauthorized
+    end
+  end
+  
   def create
     product = Product.find_by(id: params[:product_id])
     subtotal = params[:quantity] * product.price

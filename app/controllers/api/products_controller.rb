@@ -7,7 +7,8 @@ class Api::ProductsController < ApplicationController
       #   @products = Product.all.order(:price)
       # end
       # p current_user
-    @products = Product.all
+    category = Category.find_by(name: params[:search])
+    @products = category.products
     # @products = Supplier.where(supplier_id: id)
     render "index.json.jb"
   end

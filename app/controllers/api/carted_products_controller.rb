@@ -1,4 +1,9 @@
 class Api::CartedProductsController < ApplicationController
+  def index
+    @carted_products = CartedProduct.all
+    render json: {message: "hello"}
+  end
+  
   def create
     @carted_product = CartedProduct.new(
       product_id: params[:product_id],

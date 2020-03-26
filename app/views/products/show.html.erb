@@ -4,6 +4,10 @@
   <%= @product.description %>
   <img src="<%= @product.image_url %>">
   
+  <form action="/products/<%= @product.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this product">
+  </form>
 
 <%# 
 t.string "name"

@@ -13,9 +13,10 @@ class ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      supplier_id: params[:supplier_id]
     )
-  @product.save
+  @product.save!
   redirect_to "/products/#{@product.id}"
   end
   
@@ -42,7 +43,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find_by(id: params[:id])
-    @prouct.destroy
-    redirect_to "/recipes"
+    @product.destroy
+    redirect_to "/products"
   end
 end

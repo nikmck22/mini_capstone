@@ -5,7 +5,7 @@
 <p>
 <label for="suppliers">Choose a supplier</label>
 
-<select id="suppliers" name="name">
+<select id="suppliers" name="supplier_id">
 <% @suppliers.each do |supplier| %>
   <option value="<%= supplier.id %>"><%= supplier.name %></option>
   <% end %>

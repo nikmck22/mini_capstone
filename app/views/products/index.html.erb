@@ -2,11 +2,13 @@
 
 <% @products.each do |product| %>
 <ul>
-  <li><a href="/products/<%= product.name %>"></a><ul>
+  <li><%= product.name %><ul>
   <%= product.price %>
   <%= product.description %></ul></li>
  </ul>
 <% end %>
+
+
 
 <%# 
 t.string "name"

@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
   get "/products" => "products#index"
+  get "/products" => "products#new"
+  get "/products/:id" => "products#show"
   
+
+
   namespace :api do
     get "/products" => "products#index"
     get "/products/:id" => "products#show"

@@ -2,11 +2,10 @@
 
 <% @products.each do |product| %>
 <ul>
-  <li><%= product.name %><ul>
+  <li><a href="/products/<%= product.name %>"></a><ul>
   <%= product.price %>
-  <%= product.description %>
-  <img src="<%= product.image_url %>"></ul></li>
-  </ul>
+  <%= product.description %></ul></li>
+ </ul>
 <% end %>
 
 <%# 

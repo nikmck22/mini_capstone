@@ -2,7 +2,15 @@
 <p>Product name: <input type="text" name="name"></p>
 <p>Price: <input type="text" name="price"></p>
 <p>Product description: <input type="text" name="description"></p>
+<p>
+<label for="suppliers">Choose a supplier</label>
 
+<select id="suppliers" name="name">
+<% @suppliers.each do |supplier| %>
+  <option value="<%= supplier.id %>"><%= supplier.name %></option>
+  <% end %>
+</select>
+</p>
 <input type="submit" value="Add a product">
 </form>
 
